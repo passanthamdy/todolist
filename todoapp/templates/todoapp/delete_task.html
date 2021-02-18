@@ -1,0 +1,15 @@
+{% extends 'todoapp/base.html' %}
+{% block  content %}
+<div class="container">
+        <br><br>
+	<b>Deleting "<span style="color: red;">{{tasks}}</span>" is parmanent... do you want to continue?<br>
+
+	        <br><br>
+
+
+	<form method="POST" action="">{% csrf_token %}
+		<input class="btn btn-sm btn-danger" type="submit" value="Yes Delete" name="Yes">
+	</form>
+    <a class="ubutton" href="{% url 'task_list' %}" >No</a>
+</div>
+{% endblock content%}
